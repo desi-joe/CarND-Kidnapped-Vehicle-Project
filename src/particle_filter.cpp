@@ -28,7 +28,7 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 	
 	if(!is_initialized){
 	
-		num_particles = 300;
+		num_particles = 100;
 		weights.resize(num_particles);
 		particles.resize(num_particles);
 
