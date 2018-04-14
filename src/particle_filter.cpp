@@ -48,8 +48,8 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 		    particle.theta = dist_theta(gen);
 		    particle.weight = 0;
 
-		    particles.push_back(particle);
-		    weights.push_back(particle.weight);
+		    particles[i] = particle;
+		    weights[i] = particle.weight;
 		}
 
 		is_initialized = true;
@@ -86,7 +86,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 
 		// add noise
 		particles[i].x += dist_x(gen);
-		particles[i].y += dist_x(gen);
+		particles[i].y += dist_y(gen);
 		particles[i].theta += dist_theta(gen);
 	}
 
